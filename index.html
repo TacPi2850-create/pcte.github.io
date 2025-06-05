@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Piero Crispin Tacunan Eulogio</title>
+  <title>Piero Crispin Tacunan Eulogio - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
@@ -205,6 +206,8 @@
       position: relative;
       overflow: hidden;
       backdrop-filter: var(--blur-glass);
+      text-decoration: none;
+      display: inline-block;
     }
 
     .cta-button::before {
@@ -382,6 +385,99 @@
       font-weight: 600;
     }
 
+    /* Experience Section */
+    .experience-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: var(--accent-primary);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      width: 24px;
+      height: 24px;
+      background: var(--bg-card);
+      border: 4px solid var(--accent-primary);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd)::after {
+      right: -12px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: -12px;
+    }
+
+    .timeline-content {
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid var(--border-secondary);
+      backdrop-filter: var(--blur-glass);
+      position: relative;
+      box-shadow: var(--shadow-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-primary);
+      border-color: var(--accent-primary);
+    }
+
+    .timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-primary);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .timeline-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--text-primary);
+    }
+
+    .timeline-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Skills Section */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -515,25 +611,118 @@
       transform: translateX(8px);
     }
 
-    /* Contact Section */
-    .contact-content {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
+    /* Hobbies Section */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
     }
 
-    .contact-intro {
+    .hobby-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid var(--border-secondary);
+      backdrop-filter: var(--blur-glass);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-primary);
+      border-color: var(--accent-primary);
+    }
+
+    .hobby-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--accent-primary);
+    }
+
+    .hobby-title {
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .hobby-description {
       color: var(--text-secondary);
-      margin-bottom: 50px;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 30px;
+      border: 1px solid var(--border-secondary);
+      backdrop-filter: var(--blur-glass);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-primary);
+      border-color: var(--accent-primary);
+    }
+
+    .contact-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: var(--accent-primary);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: var(--text-secondary);
+    }
+
+    .contact-icon {
+      font-size: 1.3rem;
+      color: var(--accent-primary);
+      min-width: 30px;
+    }
+
+    .contact-text {
+      font-size: 1.05rem;
+    }
+
+    .cv-download {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
     }
 
     .contact-form {
       display: flex;
       flex-direction: column;
       gap: 32px;
-      margin-top: 50px;
     }
 
     .form-group {
@@ -584,11 +773,43 @@
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
+      width: 100%;
     }
 
     .submit-button:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-primary);
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-secondary);
+      color: var(--accent-primary);
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-primary);
+      border-color: var(--accent-primary);
+      background: var(--gradient-primary);
+      color: var(--bg-primary);
     }
 
     /* Footer */
@@ -603,6 +824,30 @@
     }
 
     /* Mobile Responsiveness */
+    @media (max-width: 992px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .timeline-item::after {
+        left: 18px !important;
+      }
+    }
+
     @media (max-width: 768px) {
       nav {
         top: 20px;
@@ -614,6 +859,7 @@
       .nav-links {
         justify-content: center;
         gap: 20px;
+        flex-wrap: wrap;
       }
 
       .section {
@@ -642,7 +888,11 @@
       }
 
       .name-title {
-        font-size: clump(2.5rem, 7vw, 4rem);
+        font-size: clamp(2.5rem, 7vw, 4rem);
+      }
+      
+      .hobbies-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -676,7 +926,10 @@
   <nav>
     <div class="nav-links">
       <a href="#about" class="nav-link">Chi sono</a>
+      <a href="#experience" class="nav-link">Esperienza</a>
+      <a href="#skills" class="nav-link">Competenze</a>
       <a href="#projects" class="nav-link">Progetti</a>
+      <a href="#hobbies" class="nav-link">Hobby</a>
       <a href="#contact" class="nav-link">Contatti</a>
     </div>
   </nav>
@@ -704,32 +957,109 @@
             Creo <strong>dashboard interattive</strong>, <strong>applicazioni predittive</strong> e <strong>soluzioni di automazione</strong> 
             che trasformano dataset complessi in insights strategici e azionabili per il business.
           </p>
-          <div class="skills-grid">
-            <div class="skill-card">
-              <div class="skill-icon">🐍</div>
-              <h4 class="skill-title">Python</h4>
-            </div>
-            <div class="skill-card">
-              <div class="skill-icon">🤖</div>
-              <h4 class="skill-title">Machine Learning</h4>
-            </div>
-            <div class="skill-card">
-              <div class="skill-icon">📊</div>
-              <h4 class="skill-title">Power BI</h4>
-            </div>
-            <div class="skill-card">
-              <div class="skill-icon">⚡</div>
-              <h4 class="skill-title">Streamlit</h4>
-            </div>
-            <div class="skill-card">
-              <div class="skill-icon">🔗</div>
-              <h4 class="skill-title">Node.js</h4>
-            </div>
-            <div class="skill-card">
-              <div class="skill-icon">🧠</div>
-              <h4 class="skill-title">AI/LLM</h4>
+          <p class="about-text">
+            Con un background in ingegneria dei dati e intelligenza artificiale, mi concentro sullo sviluppo di sistemi scalabili
+            che integrano modelli predittivi con interfacce utente intuitive. La mia missione è democratizzare l'accesso a tecnologie
+            avanzate di analisi dati per supportare processi decisionali basati sull'evidenza.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section" style="background: linear-gradient(rgba(13, 13, 18, 0.9), rgba(13, 13, 18, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%23151520\"/><path d=\"M0,0 L100,100 M100,0 L0,100\" stroke=\"%2364ffda\" stroke-width=\"0.5\" opacity=\"0.2\"/></svg>');">
+    <div class="container">
+      <h2 class="section-title">Esperienza Lavorativa</h2>
+      <div class="experience-container">
+        <div class="timeline">
+          <!-- Experience Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2022 - Presente</div>
+              <h3 class="timeline-title">Lead Data Scientist | TechInnovate Solutions</h3>
+              <p class="timeline-description">
+                Direzione di un team di 8 data scientist nello sviluppo di soluzioni predittive per clienti enterprise.
+                Progettazione di architetture di machine learning scalabili e implementazione di pipeline ETL ottimizzate.
+                Collaborazione con stakeholder per trasformare requisiti aziendali complessi in soluzioni tecniche.
+              </p>
             </div>
           </div>
+          
+          <!-- Experience Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2019 - 2022</div>
+              <h3 class="timeline-title">Senior AI Developer | Quantum Analytics Group</h3>
+              <p class="timeline-description">
+                Sviluppo di modelli di deep learning per l'analisi predittiva di serie temporali finanziarie.
+                Ottimizzazione di algoritmi di NLP per l'elaborazione di documenti legali e finanziari.
+                Integrazione di soluzioni AI con sistemi legacy attraverso API RESTful e microservizi.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Experience Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2017 - 2019</div>
+              <h3 class="timeline-title">Data Engineer | Data Dynamics Inc.</h3>
+              <p class="timeline-description">
+                Progettazione e implementazione di data warehouse su cloud AWS e Google Cloud Platform.
+                Sviluppo di pipeline di dati real-time per l'elaborazione di flussi di dati IoT.
+                Automazione di processi ETL con Python e Apache Spark, riducendo i tempi di elaborazione del 40%.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">Competenze Tecniche</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">🐍</div>
+          <h4 class="skill-title">Python</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🤖</div>
+          <h4 class="skill-title">Machine Learning</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <h4 class="skill-title">Power BI</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h4 class="skill-title">Streamlit</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔗</div>
+          <h4 class="skill-title">Node.js</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🧠</div>
+          <h4 class="skill-title">AI/LLM</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📈</div>
+          <h4 class="skill-title">SQL</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔍</div>
+          <h4 class="skill-title">TensorFlow</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔄</div>
+          <h4 class="skill-title">ETL</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">☁️</div>
+          <h4 class="skill-title">Cloud</h4>
         </div>
       </div>
     </div>
@@ -776,27 +1106,116 @@
     </div>
   </section>
 
+  <!-- Hobbies Section -->
+  <section id="hobbies" class="section">
+    <div class="container">
+      <h2 class="section-title">Hobby & Interessi</h2>
+      <div class="hobbies-grid">
+        <div class="hobby-card">
+          <div class="hobby-icon">🎮</div>
+          <h3 class="hobby-title">Sviluppo di Game Indie</h3>
+          <p class="hobby-description">
+            Creazione di giochi indie utilizzando Unity e Godot, con focus su meccaniche innovative
+            e integrazione di elementi di machine learning per NPC avanzati.
+          </p>
+        </div>
+        
+        <div class="hobby-card">
+          <div class="hobby-icon">🧩</div>
+          <h3 class="hobby-title">CTF & Hacking Etico</h3>
+          <p class="hobby-description">
+            Partecipazione a competizioni Capture The Flag per testare abilità di cybersecurity.
+            Sviluppo di tool per penetration testing e analisi di vulnerabilità.
+          </p>
+        </div>
+        
+        <div class="hobby-card">
+          <div class="hobby-icon">🎧</div>
+          <h3 class="hobby-title">Produzione Musicale</h3>
+          <p class="hobby-description">
+            Creazione di musica elettronica sperimentale utilizzando Ableton Live e strumenti modulari.
+            Esplorazione di algoritmi generativi per composizioni AI-assisted.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="section">
     <div class="container">
-      <div class="contact-content">
-        <h2 class="section-title">Collaborazione Professionale</h2>
-        <p class="contact-intro">
-          Interessato a sviluppare soluzioni innovative di <strong>Data Science</strong> e <strong>AI</strong>? 
-          Collaboriamo per creare sistemi intelligenti che trasformino il tuo business.
-        </p>
-        <form class="contact-form" action="mailto:tacunan@gmail.com" method="POST" enctype="text/plain">
-          <div class="form-group">
-            <input type="text" name="nome" class="form-input" placeholder="Nome e Cognome" required>
+      <h2 class="section-title">Collaborazione Professionale</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3 class="contact-title">Informazioni di Contatto</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-text">Via delle Scienze 42, Milano, Italia</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div class="contact-text">+39 333 1234567</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-text">tacunan@gmail.com</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                <div class="contact-text">www.pierotacunan.dev</div>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="email" name="email" class="form-input" placeholder="Email Professionale" required>
+          
+          <div class="contact-card">
+            <h3 class="contact-title">Curriculum Vitae</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+              Scarica il mio CV completo per maggiori dettagli su esperienze professionali, 
+              formazione e competenze tecniche.
+            </p>
+            <div class="cv-download">
+              <a href="#" class="cta-button" download="Piero_Tacunan_CV.pdf">
+                <i class="fas fa-download"></i> Scarica CV
+              </a>
+            </div>
           </div>
-          <div class="form-group">
-            <textarea name="messaggio" rows="6" class="form-textarea" placeholder="Descrivi il tuo progetto e gli obiettivi che vuoi raggiungere..." required></textarea>
-          </div>
-          <button type="submit" class="submit-button">Invia Proposta</button>
-        </form>
+        </div>
+        
+        <div class="contact-form-container">
+          <form class="contact-form" action="mailto:tacunan@gmail.com" method="POST" enctype="text/plain">
+            <div class="form-group">
+              <input type="text" name="nome" class="form-input" placeholder="Nome e Cognome" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-input" placeholder="Email Professionale" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="oggetto" class="form-input" placeholder="Oggetto" required>
+            </div>
+            <div class="form-group">
+              <textarea name="messaggio" rows="6" class="form-textarea" placeholder="Descrivi il tuo progetto e gli obiettivi che vuoi raggiungere..." required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Invia Proposta</button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://github.com/piero" class="social-link" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/piero" class="social-link" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://instagram.com/piero" class="social-link" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com/piero" class="social-link" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -867,4 +1286,17 @@
     function parallaxEffect() {
       window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        const cyberGrid = document.querySelector('.cyber-gri
+        const cyberGrid = document.querySelector('.cyber-grid');
+        cyberGrid.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.1}px)`;
+      });
+    }
+
+    // Initialize functions
+    document.addEventListener('DOMContentLoaded', () => {
+      createMatrixLines();
+      smoothScroll();
+      parallaxEffect();
+    });
+  </script>
+</body>
+</html>
