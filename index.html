@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Piero Crispin Tacunan Eulogio</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #38bdf8;
+      --text: #e2e8f0;
+      --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--secondary);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--secondary);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: var(--accent);
+      width: 0%;
+      transition: 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid #334155;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .project-card {
+      background: var(--secondary);
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+    }
+
+    .project-card a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid var(--accent);
+    }
+
+    button {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    footer {
+      background: var(--secondary);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Piero Crispin Tacunan Eulogio</h1>
+    <p>Data Scientist | Machine Learning & AI | Python | Node.js </p>
+  </header>
+
+  <nav>
+    <a href="#about">Chi sono</a>
+    <a href="#projects">Progetti</a>
+    <a href="#contact">Contatti</a>
+  </nav>
+
+  <div class="container">
+
+    <section id="about">
+      <h2>Chi sono</h2>
+      <p>Mi chiamo Piero, sono un data scientist e sviluppatore software. Progetto sistemi di forecasting, dashboard interattive in Power BI e applicazioni intelligenti con Python in Streamlit e Node.js. Ho esperienza con modelli XGBoost, LSTM e Prophet, oltre a sistemi di automazione con API e notifiche smart.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Progetti</h2>
+
+      <div class="project-card">
+        <h3>💻 Life Style Tracker (Streamlit + SQLite/Postgre)</h3>
+        <p>Un'applicazione che registra le abitudini quotidiane e visualizza l'equilibrio mentale attraverso grafici dinamici.</p>
+        <a href="https://github.com/piero/life-style-tracker" target="_blank">🔗 GitHub Repo</a>
+      </div>
+
+      <div class="project-card">
+        <h3>📈 Forecasting Finanziario (XGBoost + Power BI)</h3>
+        <p>Dashboard per benchmarking, previsione di KPI economici e confronto multi-azienda integrando Python in Power BI.</p>
+        <a href="https://github.com/piero/kpi-forecasting" target="_blank">🔗 GitHub Repo</a>
+      </div>
+
+      <div class="project-card">
+        <h3>🤖 Jarvis AI con LM Studio e ChatGPT</h3>
+        <p>Assistente personale via Streamlit che integra LLM locali (Qwen, DeepSeek) e API GPT-4 Turbo per chat, previsioni e grafici.</p>
+        <a href="https://github.com/piero/jarvis-streamlit" target="_blank">🔗 GitHub Repo</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contattami</h2>
+      <form action="mailto:tacunan@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="nome" placeholder="Il tuo nome" required>
+        <input type="email" name="email" placeholder="La tua email" required>
+        <textarea name="messaggio" rows="5" placeholder="Il tuo messaggio..." required></textarea>
+        <button type="submit">Invia</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> Piero Crispin Tacunan Eulogio • Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Highlight nav link based on scroll position
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
