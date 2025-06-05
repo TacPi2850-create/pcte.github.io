@@ -1,12 +1,10 @@
-# 🚀 Portfolio - Piero Crispin Tacunan Eulogio
+# 🚀 Portfolio
 
 Un portfolio web futuristico e dinamico che rappresenta le competenze di un Data Scientist specializzato in Machine Learning e AI. Design cyberpunk con animazioni fluide, effetti neon e un'esperienza utente coinvolgente.
 
-## 🌟 Demo Live
+##  Demo Live
 
 🔗 **[Visualizza Portfolio](https://your-portfolio-url.com)**
-
-## ✨ Caratteristiche Principali
 
 ### 🎨 Design Futuristico
 - **Tema Cyberpunk** con palette colori neon (cyan, magenta, viola)
